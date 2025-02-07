@@ -23,4 +23,6 @@ numpy>=2.0.1</br>
 requests>=2.32.3</br>
   
 **You can install the dependencies by running:**</br>
+```bash
 pip install -r requirements.txt
+```
