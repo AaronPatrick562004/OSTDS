@@ -1,4 +1,4 @@
-# corona-data-analytics
+# Corona-Data-Analytics
 This project is a web-based dashboard for analyzing and visualizing COVID-19 data. It utilizes Django for the web framework and Seaborn for creating data visualizations. The dashboard provides several key insights into COVID-19 statistics for the US.
 
 Features
@@ -12,8 +12,7 @@ Features
 
 - Active Cases Trends Over Time: Tracks the trends of active cases over time.
 
- Requirements
- To run this project locally, you'll need the following installed:
+Project Requirements:
  
 Python: Ensure you have Python version 3.12.2 or higher installed.
 
