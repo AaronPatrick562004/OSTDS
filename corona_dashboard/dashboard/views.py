@@ -1,3 +1,13 @@
+"""
+Django Views for COVID-19 Data Visualization Dashboard
+
+This module loads a processed COVID-19 dataset, cleans it, and generates various visualizations,
+which are then rendered in a Django template.
+
+Author: Aaron Patrick
+Date: 9th Feb 2025
+"""
+
 from django.shortcuts import render
 import pandas as pd
 import seaborn as sns
@@ -6,6 +16,15 @@ from io import BytesIO
 import base64
 
 def render_image(image_data):
+    """
+    Converts a Matplotlib figure to a base64-encoded PNG image.
+
+    Args:
+        image_data (matplotlib.figure.Figure): Matplotlib figure to be converted.
+
+    Returns:
+        str: Base64-encoded string representation of the image.
+    """
     buffer = BytesIO()
     image_data.savefig(buffer, format="png")
     buffer.seek(0)
@@ -13,7 +32,16 @@ def render_image(image_data):
     return img_str
 
 def home(request):
-     
+    """
+    Handles the request for the dashboard homepage, processes COVID-19 data,
+    generates visualizations, and renders them in a Django template.
+
+    Args:
+        request (HttpRequest): The HTTP request object.
+
+    Returns:
+        HttpResponse: Rendered HTML page with visualized COVID-19 data.
+    """
     csv_file_path = "C:\\Users\\hp\\Desktop\\OSTDS\\assgn_1_corona\\data\\processed_data.csv"
     data = pd.read_csv(csv_file_path)
     df = pd.DataFrame(data)
@@ -49,10 +77,10 @@ def home(request):
     plt.subplots_adjust(bottom=0.25)
     confirmed_cases_image = render_image(plt)
 
-     
-    plt.figure(figsize=(12, 8))
+    
     if 'Recovered' in df.columns and 'Confirmed' in df.columns:
         df['Recovery_Rate'] = (df['Recovered'] / df['Confirmed']) * 100
+        plt.figure(figsize=(12, 8))
         sns.barplot(x='Province_State', y='Recovery_Rate', data=df)
         plt.title("Recovery Rates by Province/State")
         plt.xticks(rotation=45, ha='right')
@@ -60,13 +88,12 @@ def home(request):
         recovery_rates_image = render_image(plt)
     
      
-    plt.figure(figsize=(12, 8))
     df_grouped = df.groupby('Last_Update')['Active'].sum().reset_index()
+    plt.figure(figsize=(12, 8))
     sns.lineplot(x='Last_Update', y='Active', data=df_grouped)
     plt.title("Active Cases Trends Over Time")
     active_cases_image = render_image(plt)
 
-     
     return render(request, 'dashboard/home.html', {
         'case_fatality_image': case_fatality_image,
         'correlation_image': correlation_image,
