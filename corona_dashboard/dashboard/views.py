@@ -13,18 +13,18 @@ def render_image(image_data):
     return img_str
 
 def home(request):
-    # Load and clean data
+     
     csv_file_path = "C:\\Users\\hp\\Desktop\\OSTDS\\assgn_1_corona\\data\\processed_data.csv"
     data = pd.read_csv(csv_file_path)
     df = pd.DataFrame(data)
 
-    # Clean data
+     
     df.dropna(inplace=True)
     df['Last_Update'] = pd.to_datetime(df['Last_Update'])
     df = df[df['Country_Region'] == 'US']
     df = df.drop(columns=['Long_', 'Lat'], errors='ignore')
 
-    # Create Case Fatality Ratio plot
+     
     if 'Deaths' in df.columns and 'Confirmed' in df.columns:
         df['Case_Fatality_Ratio'] = (df['Deaths'] / df['Confirmed']) * 100
         plt.figure(figsize=(12, 8))
@@ -33,7 +33,7 @@ def home(request):
         plt.xlabel("Case Fatality Ratio (%)")
         case_fatality_image = render_image(plt)
 
-    # Create Correlation Matrix plot
+     
     numeric_data = df.select_dtypes(include=['float64', 'int64'])
     correlation = numeric_data.corr()
     plt.figure(figsize=(12, 8))
@@ -41,7 +41,7 @@ def home(request):
     plt.title("Correlation Matrix")
     correlation_image = render_image(plt)
 
-    # Create Confirmed Cases by Province/State plot
+     
     plt.figure(figsize=(12, 8))
     sns.barplot(x='Province_State', y='Confirmed', data=df)
     plt.title("Confirmed Cases by Province/State")
@@ -49,7 +49,7 @@ def home(request):
     plt.subplots_adjust(bottom=0.25)
     confirmed_cases_image = render_image(plt)
 
-    # Create Recovery Rates by Province/State plot
+     
     plt.figure(figsize=(12, 8))
     if 'Recovered' in df.columns and 'Confirmed' in df.columns:
         df['Recovery_Rate'] = (df['Recovered'] / df['Confirmed']) * 100
@@ -59,14 +59,14 @@ def home(request):
         plt.subplots_adjust(bottom=0.25)
         recovery_rates_image = render_image(plt)
     
-    # Create Active Cases Trends plot
+     
     plt.figure(figsize=(12, 8))
     df_grouped = df.groupby('Last_Update')['Active'].sum().reset_index()
     sns.lineplot(x='Last_Update', y='Active', data=df_grouped)
     plt.title("Active Cases Trends Over Time")
     active_cases_image = render_image(plt)
 
-    # Pass images to template
+     
     return render(request, 'dashboard/home.html', {
         'case_fatality_image': case_fatality_image,
         'correlation_image': correlation_image,
