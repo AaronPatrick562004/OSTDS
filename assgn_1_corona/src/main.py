@@ -8,7 +8,7 @@ on the cleaned data, including descriptive statistics, case fatality ratio calcu
 and visualization of correlations and distributions.
 
 Author: Aaron Patrick
-Date: 9th Feb 2025
+Date: 11th Feb 2025
 """
 
 import pandas as pd
@@ -108,3 +108,6 @@ if __name__ == '__main__':
         plt.show()
     else:
         logger.error("Data loading failed. Exiting the script.")
+
+
+ 
