@@ -15,14 +15,14 @@ Features:
 Requirements:
 To run this project locally, you'll need the following installed:
 
-Django>=3.0
-pandas>=1.0
-matplotlib>=3.0
-seaborn>=0.10
-pillow>=7.0
-numpy>=1.18
-requests>=2.0
-beautifulsoup4>=4.0
+Django>=3.0 </br>
+pandas>=1.0 </br>
+matplotlib>=3.0 </br>
+seaborn>=0.10 </br>
+pillow>=7.0 </br>
+numpy>=1.18 </br>
+requests>=2.0 </br>
+beautifulsoup4>=4.0 </br>
 
 ```bash
 You can install the dependencies by running:
