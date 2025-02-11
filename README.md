@@ -22,7 +22,7 @@ seaborn>=0.10 </br>
 pillow>=7.0 </br>
 numpy>=1.18 </br>
 requests>=2.0 </br>
-beautifulsoup4>=4.0 </br>
+ 
 
 ```bash
 You can install the dependencies by running:
