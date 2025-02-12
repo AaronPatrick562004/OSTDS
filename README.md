@@ -30,9 +30,10 @@ You can install the dependencies by running:
 pip install -r requirements.txt
 ```
 
-**--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------**
+ 
 
 # assgn_2_jupyter
+# La Liga Match Data Scraper & Statistics Tracker
 ## Overview
 This project scrapes football match data from the [FBref](https://fbref.com/en/comps/12/schedule/La-Liga-Scores-and-Fixtures) website for La Liga and analyzes the match results, including scores, team performances, and trends over different seasons.
 
