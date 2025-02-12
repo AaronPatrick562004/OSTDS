@@ -1,4 +1,4 @@
-**assgn_1_Corona**
+##assgn_1_Corona
 
 Requirements: To run this project locally, you'll need the following installed:
 
@@ -9,3 +9,10 @@ seaborn>=0.10
 pillow>=7.0
 numpy>=1.18
 requests>=2.0
+
+##assgn_2_jupyter
+Requirements: You can install the necessary dependencies by running:
+requests==2.31.0
+beautifulsoup4==4.12.2
+pandas==2.0.3
+matplotlib==3.8.0
