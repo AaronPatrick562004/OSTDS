@@ -1,3 +1,4 @@
+# assgn_1_Corona
 # Corona-Data-Analytics
 This project is a web-based dashboard for analyzing and visualizing COVID-19 data. It utilizes Django for the web framework and Seaborn for creating data visualizations. The dashboard provides several key insights into COVID-19 statistics for the US.
 
@@ -28,3 +29,31 @@ requests>=2.0 </br>
 You can install the dependencies by running:
 pip install -r requirements.txt
 ```
+**------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------**
+
+# assgn_2_jupyter
+## Overview
+This project scrapes football match data from the [FBref](https://fbref.com/en/comps/12/schedule/La-Liga-Scores-and-Fixtures) website for La Liga and analyzes the match results, including scores, team performances, and trends over different seasons.
+
+The scraper gathers key match details like:
+- Date and time
+- Home and away teams
+- Expected Goals (xG)
+- Score
+- Attendance
+- Venue
+- Referee information
+- Match report links
+
+It then processes the data and generates a visual representation of match results, such as home wins, away wins, and draws.
+
+## Project Files:
+- `scraper.py`: Main Python script that scrapes data from the website.
+- `la_liga_match_data.json`: The JSON file containing the scraped match data.
+- `README.md`: This file that explains the project.
+- `requirements.txt`: A list of required Python packages.
+
+## Requirements:
+You can install the necessary dependencies by running:
+```bash
+pip install -r requirements.txt
