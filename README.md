@@ -57,5 +57,10 @@ It then processes the data and generates a visual representation of match result
 
 ## Requirements:
 You can install the necessary dependencies by running:
+requests==2.31.0
+beautifulsoup4==4.12.2
+pandas==2.0.3
+matplotlib==3.8.0
+
 ```bash
 pip install -r requirements.txt
