@@ -1,6 +1,6 @@
 **assgn_1_Corona**
 
-Requirements: To run this project locally, you'll need the following installed:
+Requirements: To run this project locally, you'll need the following installed:</br>
 
 Django>=3.0</br>
 pandas>=1.0</br>
