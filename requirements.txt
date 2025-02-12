@@ -1,9 +1,11 @@
-## Folder Structure
+**assgn_1_Corona**
 
-1. Create license file
-2. Create requirements.txt
-3. Create docs folder
-4. Create src folder
-5. Tests folder
-6. Config folder
-7. Data folder
+Requirements: To run this project locally, you'll need the following installed:
+
+Django>=3.0</br>
+pandas>=1.0</br>
+matplotlib>=3.0</br>
+seaborn>=0.10</br>
+pillow>=7.0</br>
+numpy>=1.18</br>
+requests>=2.0</br>
