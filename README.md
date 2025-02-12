@@ -56,7 +56,7 @@ It then processes the data and generates a visual representation of match result
 - `requirements.txt`: A list of required Python packages.
 
 ## Requirements:
-You can install the necessary dependencies by running:
+You can install the necessary dependencies by running:</br>
 requests==2.31.0</br>
 beautifulsoup4==4.12.2</br>
 pandas==2.0.3</br>
